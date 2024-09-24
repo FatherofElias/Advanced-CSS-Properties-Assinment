@@ -1,0 +1,56 @@
+:root {
+    --link-color: #0000EE;
+    --link-hover-color: #FF4500;
+    --button-padding: 10px 20px;
+    --button-font-size: 16px;
+    --rotation-duration: 5s;
+}
+
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: var(--link-hover-color);
+}
+
+@keyframes clickAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+button {
+    padding: var(--button-padding);
+    font-size: var(--button-font-size);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+button:active {
+    animation: clickAnimation 0.2s ease-in-out;
+}
+
+@keyframes rotateAnimation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+img {
+    width: 100px;
+    height: auto;
+    animation: rotateAnimation var(--rotation-duration) linear infinite;
+}
